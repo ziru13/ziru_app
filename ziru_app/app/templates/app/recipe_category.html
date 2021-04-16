@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    <table>
+        <tbody>
+            <tr>
+                {% for category in categories %}
+                <td><a href="#">{{ category.name }}</a></td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

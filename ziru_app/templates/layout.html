@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SleepyFish</title>
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+</head>
+<body>
+    <header>
+        <h2>SleepyFish</h2>
+        <p>We're Ziru and Mixi!</p>
+        
+        <table>
+            <tr>
+                <td><a href="{% url 'home' %}">HOME</a></td>
+                <td><a href="{% url 'app:recipe_category' %}">RECIPES</a></td>
+                <td><a href="#">TRAVEL</a></td>
+                <td><a href="#">LANGUAGES</a></td>
+            </tr>
+        </table>
+    </header>
+    
+    
+    {% block content %}{% endblock %}
+    
+    <footer><small>&copy; 2021 SleepyFish</small></footer>
+
+</body>
+</html>

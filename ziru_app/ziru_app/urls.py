@@ -14,11 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import path, include
 
 from . import views
 
 urlpatterns = [
+    path('sleepyfish/', include('app.urls', namespace='app')),
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
 ]
+
+# 创建assets文件后添加的, 然后到layout.html中添加{% load static %}标签
+urlpatterns += staticfiles_urlpatterns()

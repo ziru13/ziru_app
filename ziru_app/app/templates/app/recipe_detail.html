@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    <h1>{{ recipe.title }}</h1>
+    <p>{{ recipe.created_at }}</p>
+</div>
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <th>Ingredients</th>
+                <th>{{ recipe.ingredients }}</th>
+            </tr>
+            <tr>
+                <th>Instructions</th>
+                <th>{{ recipe.instructions }}</th>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <th>{{ recipe.notes }}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
