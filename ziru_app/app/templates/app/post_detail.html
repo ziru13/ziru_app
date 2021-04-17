@@ -3,23 +3,23 @@
 
 {% block content %}
 <div>
-    <h1>{{ recipe.name }}</h1>
-    <p>{{ recipe.created_at }}</p>
+    <h1>{{ post.name }}</h1>
+    <p>{{ post.created_at }}</p>
 </div>
 <div>
     <table>
         <tbody>
             <tr>
                 <th>Ingredients</th>
-                <th>{{ recipe.ingredients }}</th>
+                <th>{{ post.ingredients }}</th>
             </tr>
             <tr>
                 <th>Instructions</th>
-                <th>{{ recipe.instructions }}</th>
+                <th>{{ post.instructions }}</th>
             </tr>
             <tr>
                 <th>Notes</th>
-                <th>{{ recipe.notes }}</th>
+                <th>{{ post.notes }}</th>
             </tr>
         </tbody>
     </table>
