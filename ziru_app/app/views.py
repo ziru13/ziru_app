@@ -14,6 +14,6 @@ def get_a_category(request, category_pk):
     return render(request, 'app/get_a_category.html', {'posts': posts})
 
 
-def post_detail(request, category_pk, post_pk):
-    post = get_object_or_404(models.Post, recipe_category_id=category_pk,pk=post_pk)
+def post_detail(request, post_pk):
+    post = get_object_or_404(models.Post, pk=post_pk)
     return render(request, 'app/post_detail.html', {'post': post})

@@ -6,7 +6,7 @@
     
     {% for post in posts %}
         <img src="/static/images/test.jpg">
-        <p><a href="% url 'app:post_detail' category_pk post_pk %}">{{ post.name }}</a></p>
+        <p><a href="{% url 'app:post_detail' category_pk post_pk %}">{{ post.name }}</a></p>
         <p>{{ post.created_at }}</p>
     {% endfor %}
 </div>
