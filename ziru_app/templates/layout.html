@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
 </head>
 <body>
-    <header>
+    <div class="container">
         <h2>SleepyFish</h2>
-        <p>We're Ziru and Mixi!</p>
         
         <table>
             <tr>
@@ -20,12 +19,15 @@
                 <td><a href="#">LANGUAGES</a></td>
             </tr>
         </table>
-    </header>
+        <hr>
+        
+        {% block content %}{% endblock %}
+        
+    </div>
     
-    
-    {% block content %}{% endblock %}
-    
-    <footer><small>&copy; 2021 SleepyFish</small></footer>
+    <div class="footer">
+        <small>&copy; 2021 SleepyFish</small>
+    </div>
 
 </body>
 </html>

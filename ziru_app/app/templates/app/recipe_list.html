@@ -1,9 +1,0 @@
-{% extends "layout.html" %}
-{% load static %}
-
-{% block content %}
-<h1>Recipes by Category</h1>
-{% for recipe in recipes %}
-    <a>{{ recipe.name }}</a>
-{% endfor %}
-{% endblock %}

@@ -1,11 +1,6 @@
 body {
-	background-color: #CAE5D2;
-	font-size: 1.5em;
-	line-height: 1.6;
-	font-weight: 400;
-	font-family: "Cousine"
-	color: #666;
-	width: 900px;
+	background-color: #fff;
+	line-width: 1.6;
+	max-width: 800px;
 	margin: 0 auto;
 }
-
