@@ -4,29 +4,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SleepyFish</title>
+    <title>Dinosaursinlove</title>
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
 </head>
 <body>
     <div class="container">
-        <h2>SleepyFish</h2>
-        
-        <table>
-            <tr>
-                <td><a href="{% url 'home' %}">HOME</a></td>
-                <td><a href="{% url 'app:recipe_category' %}">RECIPES</a></td>
-                <td><a href="#">TRAVEL</a></td>
-                <td><a href="#">LANGUAGES</a></td>
-            </tr>
-        </table>
-        <hr>
-        
-        {% block content %}{% endblock %}
+        <div class="grid-100">
+            <div class="container_header">
+                <a href="{% url 'home' %}">
+                    <h1>DINOSAURS IN L&#9829;VE</h1>
+                </a>
+            </div>
+            <hr>
+            <div class="container_nav">
+                <a href="{% url 'home' %}">HOME</a>
+                <a href="{% url 'app:recipe_category' %}">RECIPES</a>
+                <a href="#">TRAVEL</a>
+                <a href="#">LANGUAGES</a>
+                <a href="#">ABOUT</a>
+            </div>
+            
+            {% block content %}{% endblock %}
+        </div>
         
     </div>
     
+    
     <div class="footer">
-        <small>&copy; 2021 SleepyFish</small>
+        <hr>
+        <small>&copy; 2021 DINOSAURS IN LOVE</small>
     </div>
 
 </body>

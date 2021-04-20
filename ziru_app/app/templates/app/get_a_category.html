@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div class="container__recipes">
+<div class="container_recipes">
     
     {% for post in posts %}
         <img src="/static/images/test.jpg">
@@ -10,4 +10,8 @@
         <p>{{ post.created_at }}</p>
     {% endfor %}
 </div>
+{% if user.is_authenticated %}
+<hr>
+<a href="{% url 'app:post_create' category_pk=category.id %}">New Post</a>
+{% endif %}
 {% endblock %}
