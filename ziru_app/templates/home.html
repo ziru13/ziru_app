@@ -1,5 +1,18 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-
+<div class="wrapper">
+    <h2 class="latest_title">Latest</h2>
+    <div class="content">
+        {% for post in posts %}
+        <article class="post">
+            <a href="#">
+                <img class="image_post" src="/static/images/test.jpg">
+                <h4>{{ post }}</h4>
+                <small>{{ post.created_at|date:'F d, Y' }}</small>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

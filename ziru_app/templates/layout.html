@@ -15,24 +15,36 @@
                     <h1>DINOSAURS IN L&#9829;VE</h1>
                 </a>
             </div>
-            <hr>
+
             <div class="container_nav">
+                <hr>
                 <a href="{% url 'home' %}">HOME</a>
-                <a href="{% url 'app:recipe_category' %}">RECIPES</a>
+<!--                <div class="dropdown">-->
+<!--                    <a class="dropbtn" href="{% url 'app:recipe_category' %}">RECIPES</a>-->
+<!--                    <div class="dropdown-content">-->
+<!--                        {% for category in categories %}-->
+<!--                        <a href="{% url 'app:get_a_category' category_pk=category.id %}">{{ category.name }}</a>-->
+<!--                        {% endfor %}-->
+<!--                    </div>-->
+<!--                </div>-->
+            <a class="dropdown" href="{% url 'app:recipe_category' %}">RECIPES</a>
+
                 <a href="#">TRAVEL</a>
                 <a href="#">LANGUAGES</a>
                 <a href="#">ABOUT</a>
+                <hr>
             </div>
             
+            
             {% block content %}{% endblock %}
+
         </div>
-        
     </div>
-    
+
     
     <div class="footer">
-        <hr>
-        <small>&copy; 2021 DINOSAURS IN LOVE</small>
+        
+        <small>&copy; 2021 DINOSAURS IN LOVE.</small>
     </div>
 
 </body>

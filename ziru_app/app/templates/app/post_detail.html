@@ -2,27 +2,30 @@
 {% load static %}
 
 {% block content %}
-<div>
-    <h2>{{ post.name }}</h2>
-    <p>{{ post.created_at }}</p>
+<div class="post_detail">
+    <img class="detail_img" src="/static/images/test.jpg">
+    <div class="detail_container">
+        <h3>{{ post.name }}</h3>
+        <small>{{ post.created_at|date:'F d, Y' }}</small>
+        <p class="post_description">
+            <em>{{ post.description }}</em>
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Ingredients</th>
+                    <td>{{ post.ingredients }}</td>
+                </tr>
+                <tr>
+                    <th>Instructions</th>
+                    <td>{{ post.instructions }}</td>
+                </tr>
+                <tr>
+                    <th>Notes</th>
+                    <td>{{ post.notes }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-<div>
-    <table>
-        <tbody>
-            <tr>
-                <th>Ingredients</th>
-                <th>{{ post.ingredients }}</th>
-            </tr>
-            <tr>
-                <th>Instructions</th>
-                <th>{{ post.instructions }}</th>
-            </tr>
-            <tr>
-                <th>Notes</th>
-                <th>{{ post.notes }}</th>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
 {% endblock %}

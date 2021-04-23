@@ -6,7 +6,7 @@
     {{ block.super }}
     <h1>{{ post.name }}</h1>
     <p>{{ post.created_at }}</p>
-    <form action="" method="POST">
+    <form class="recipe_form" action="" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Save">

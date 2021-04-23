@@ -21,6 +21,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=255)
     # url = models.URLField(max_length=250)
+    description = models.TextField()
     ingredients = models.TextField()
     instructions = models.TextField()
     notes = models.TextField()

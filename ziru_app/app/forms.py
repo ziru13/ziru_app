@@ -9,6 +9,7 @@ class PostForm(forms.ModelForm):
         fields = [
             'recipe_category',
             'name',
+            'description',
             'ingredients',
             'instructions',
             'notes', ]
