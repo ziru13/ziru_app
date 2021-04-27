@@ -7,6 +7,12 @@ from django.shortcuts import render, get_object_or_404
 from . import models
 
 # Create your views here.
+from .models import Post
+
+
+def home(request):
+    posts = Post.objects.all().order_by('-created_at')[:5]
+    return render(request, 'home.html', {'posts': posts})
 
 
 def recipe_category(request):
@@ -26,10 +32,11 @@ def post_detail(request, category_pk, post_pk):
     return render(request, 'app/post_detail.html', {'post': post})
 
 
-def newest_post(request):
-    """Get the 5 newest posts"""
-    posts = get_object_or_404(models.Post).order_by('-created_at')[:5]
-    return render(request, 'home.html', {'posts': posts})
+# def newest_post(request):
+#     """Get the 5 newest posts"""
+#     posts = get_object_or_404(models.Post).all().order_by('-created_at')[:5]
+#     return render(request, 'home.html', {'posts': posts})
+
 
 @login_required
 def post_create(request, category_pk):

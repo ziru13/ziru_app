@@ -1,18 +1,24 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div class="wrapper">
-    <h2 class="latest_title">Latest</h2>
-    <div class="content">
-        {% for post in posts %}
-        <article class="post">
-            <a href="#">
-                <img class="image_post" src="/static/images/test.jpg">
-                <h4>{{ post }}</h4>
-                <small>{{ post.created_at|date:'F d, Y' }}</small>
-            </a>
-        </article>
-        {% endfor %}
-    </div>
+<div id="post-homepage">
+    {% for post in posts %}
+    <article>
+        <a href="{% url 'app:post_detail' post.recipe_category.pk post.pk %}" title="{{ post.name }}">
+            <img class="recipe-image" src="/static/images/test.jpg" alt="{{ post.name }}">
+        </a>
+        <div class="post-text"> 
+            <a class="post-category" href="{% url 'app:get_a_category' post.recipe_category.pk %}">{{ post.recipe_category }}</a>
+            <h2 id="post-title">
+                <a href="{% url 'app:post_detail' post.recipe_category.pk post.pk %}">{{ post.name }}</a>
+            </h2>
+            <p id="post-description">{{ post.description|truncatewords:15 }}</p>
+            <div class="date">{{ post.created_at|date:'F d, Y' }}</div>
+        </div>
+    </article>
+    {% endfor %}
 </div>
 {% endblock %}
+
+{#{% url 'app:app:get_a_category' post.recipe_category.pk %}#}
+{#{% url 'app:recipe_category' post.pk %} #}

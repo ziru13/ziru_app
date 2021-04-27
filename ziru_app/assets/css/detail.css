@@ -1,0 +1,35 @@
+/* HTML */
+
+/* Classes */
+.detail-container {
+    background: pink;
+    margin-right: 30px;
+}
+
+.detail-header {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.detail-title {
+    background: yellowgreen;
+    font-size: 36px;
+    font-weight: 10;
+    margin-top: 20px;
+}
+
+.sub-nav {
+    margin-bottom: 20px;
+    color: #939a9f;
+}
+
+.post-ingredients {
+    margin-top: 30px;
+}
+
+/* ID */
+#ingredient-title {
+    margin-top: 20px;
+    font-size: 1.2em;
+    border-bottom: 1px solid #eaeaea;
+}

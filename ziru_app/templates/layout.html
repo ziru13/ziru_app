@@ -6,46 +6,64 @@
     <meta charset="UTF-8">
     <title>Dinosaursinlove</title>
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+    <link rel="stylesheet" href="{% static 'css/add_post.css' %}">
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
 </head>
 <body>
+<header>
+    <nav class="container">
+        <a href="{% url 'sleepyfish:home' %}" id="logo">DINOSAURS IN L♥VE</a>
+        <a href="{% url 'sleepyfish:home' %}">Home</a>
+        <a href="{% url 'app:recipe_category' %}">Recipe</a>
+        <a href="#">Travel</a>
+        <a href="#">Languages</a>
+        <a href="#">About</a>
+    </nav>
+</header>
+<hr>
+<div id="title-container">
     <div class="container">
-        <div class="grid-100">
-            <div class="container_header">
-                <a href="{% url 'home' %}">
-                    <h1>DINOSAURS IN L&#9829;VE</h1>
-                </a>
-            </div>
+        <a href="{% url 'sleepyfish:home' %}">
+            <h1 id="title">DINOSAURS IN L&#9829;VE</h1>
+        </a>
+    </div>
+</div>
 
-            <div class="container_nav">
-                <hr>
-                <a href="{% url 'home' %}">HOME</a>
-<!--                <div class="dropdown">-->
-<!--                    <a class="dropbtn" href="{% url 'app:recipe_category' %}">RECIPES</a>-->
-<!--                    <div class="dropdown-content">-->
-<!--                        {% for category in categories %}-->
-<!--                        <a href="{% url 'app:get_a_category' category_pk=category.id %}">{{ category.name }}</a>-->
-<!--                        {% endfor %}-->
-<!--                    </div>-->
-<!--                </div>-->
-            <a class="dropdown" href="{% url 'app:recipe_category' %}">RECIPES</a>
-
-                <a href="#">TRAVEL</a>
-                <a href="#">LANGUAGES</a>
-                <a href="#">ABOUT</a>
-                <hr>
-            </div>
-            
-            
-            {% block content %}{% endblock %}
-
+<div id="main-container" class="container">
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <aside>
+        <div id="featured-posts">
+            <p>Featured Posts</p>
         </div>
-    </div>
-
+        <div id="search-posts">
+            <p id="search-title">Search Posts</p>
+            <form action="" method="get">
+                <div id="search-form">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                    </svg>
+                    <input type="text" placeholder="type here and press enter">
+                </div>
+            </form>
+        </div>
     
-    <div class="footer">
-        
-        <small>&copy; 2021 DINOSAURS IN LOVE.</small>
-    </div>
-
+        {% if user.is_authenticated %}
+        <div id="add-new-post">
+            <button type="submit"><a id="button">&#43; Add New Post</a></button>
+        </div>
+        {% endif %}
+    </aside>
+</div>
+<footer class="container">
+    <span>&copy; 2021 DINOSAURS IN LOVE.</span>
+</footer>
 </body>
 </html>
+
+{#{% url 'app:post_create' category_pk=category.id %}#}
+{#search icon: &#128269;#}

@@ -2,14 +2,17 @@
 {% load static %}
 
 {% block content %}
-<div class="container_row">
-    <div>
-        {% for category in categories %}
-        <a class="column" href="{% url 'app:get_a_category' category_pk=category.id %}">
+
+<div class="category">
+    
+    {% for category in categories %}
+    <article>
+        <a href="{% url 'app:get_a_category' category_pk=category.id %}">
             <img class="img_category" src="/static/images/test.jpg">
             <h4>{{ category.name }}</h4>
         </a>
-        {% endfor %}
-    </div>
+    </article>
+    {% endfor %}
 </div>
+    
 {% endblock %}

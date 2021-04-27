@@ -2,18 +2,21 @@
 {% load static %}
 
 {% block content %}
-<div class="container_row">
+<div class="category">
     
     {% for post in posts %}
-    <a class="column"href="{% url 'app:post_detail' post.recipe_category.pk post.pk %}">
-        <img class="image_post" src="/static/images/test.jpg">
-        <h4>{{ post.name }}</h4>
-        <small>{{ post.created_at|date:'F d, Y' }}</small>
-    </a>
+    <article>
+        <a href="{% url 'app:post_detail' post.recipe_category.pk post.pk %}">
+            <img class="image_post" src="/static/images/test.jpg">
+            <h4>
+                {{ post.name }}
+                <div class="date">{{ post.created_at|date:'F d, Y' }}</div>
+            </h4>
+            
+        </a>
+    </article>
     {% endfor %}
+    
 </div>
-{% if user.is_authenticated %}
-<hr>
-<a href="{% url 'app:post_create' category_pk=category.id %}">New Post</a>
-{% endif %}
+
 {% endblock %}

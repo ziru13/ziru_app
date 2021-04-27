@@ -1,13 +1,13 @@
 from django import template
-
-from ..models import Post
+import markdown2
+from django.utils.safestring import mark_safe
 
 
 register = template.Library()
 
-# @register.simple_tag
-# def newest_post():
-#     """ Gets the most recent post that was added to the library. """
-#     posts = Post.objects.all().order_by('-created_at')[:5]
-#     return posts
 
+@register.filter('markdown_to_html')
+def markdown_to_html(markdown_text):
+    """Converts markdown text to HTML"""
+    html_body = markdown2.markdown(markdown_text)
+    return mark_safe(html_body)

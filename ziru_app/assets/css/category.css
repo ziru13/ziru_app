@@ -1,0 +1,13 @@
+/* Classes*/
+.category {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+}
+
+/*HTML*/
+h4 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
